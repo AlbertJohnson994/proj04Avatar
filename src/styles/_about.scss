@@ -1,0 +1,110 @@
+@use 'variaveis';
+
+.about{
+    position: relative;
+    background-image: url(../images/Pandora.webp);
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center top;
+    transition: height 0.3s ease;
+    background-position: center 2vw;
+    
+    @media (max-width: 768p) {
+        background-position: center top;
+        background-repeat: repeat;
+        background-size: auto; 
+        height: auto; 
+    }
+
+
+    &__content{
+        text-align: center;
+        background-color: rgba(0,0,0, .8);
+        padding-bottom: 3vw;
+        min-height: 100vh;
+        
+        @media (max-width:1024px) {
+            min-height: 160vh;
+            
+        }
+
+        @media (max-width: 768px) {
+            display: flex;
+            flex-direction: column;
+            min-height: 190vh;
+        }
+
+        @media (max-width:376px) {
+            margin-bottom: 250px;
+        }
+
+        
+        @media (max-width:350px) {
+            min-height: 320vh;
+        }
+
+        &__nav{
+            display: flex;
+            width: 40%;
+            justify-content: space-between;
+            margin: 48px auto;
+            background-color: transparent;
+                        
+            @media (max-width: 768px) {
+                width: 50%;
+            }
+            
+            @media (max-width: 500px) {
+                width: 75%;
+                align-items: center;
+            }
+
+
+            &__button{
+                text-align: center;
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+                border-bottom: 5px solid transparent;
+                transition: all .3s ease;
+
+                &--is-active{
+                    border-color: variaveis.$corTextoSecundario;
+                    transition: all .3s ease;
+                }
+            }
+        }
+        
+        &__text{
+            text-align: justify;
+            background-color: transparent;
+            margin: 80px auto;
+            transition: all .5s ease;
+            width: 70%;
+            margin: 0 auto;
+            height: 630px;
+            margin-bottom: 40px;
+
+            @media (max-width:1024px) {
+                margin-bottom: 120px;
+                
+            }
+
+            @media (max-width:500px) {
+                margin-bottom: 900px;
+            }
+
+        }
+
+        &__list{
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 48px;
+
+            &__item{
+                padding: 0 24px;
+            }
+        }
+    }
+}

@@ -1,0 +1,85 @@
+@use 'variaveis';
+
+.trailer{
+    margin: 5.6vw auto;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 3vw ;
+
+    @media (max-width: 768px) {
+        margin-top: 25vw;
+        
+    }
+    
+
+    &__title {
+        margin-bottom: 64px;
+        text-align: center;
+    }
+
+    &__content{
+        margin: 0 auto;
+        width:80%;
+        text-align: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap:10%;
+
+        @media (max-width: 768px) {
+            display: block;
+            
+        }
+
+        &__list{
+            @media (max-width: 768px){
+                margin-bottom: 10px;
+            }
+            &__each{
+                iframe{
+                    width: 40vw; /* Ajusta a largura do iframe para 100% da largura disponível */
+                    height: 23vw; /* Ajuste a altura do iframe conforme necessário */
+
+                    @media (max-width:768px){
+                        margin: 18px auto;
+                        width: 60vw; /* Ajusta a largura do iframe para 100% da largura disponível */
+                        height: 35vw; /* Ajuste a altura do iframe conforme necessário */
+
+                    }
+                }
+            }
+        }
+
+        h3{
+            display: block;
+        }
+    
+        &__nav{
+            display: flex;
+            flex-wrap: wrap;
+            padding-top: 2vw ;
+
+            &__button{
+                border: none;
+                background-color: variaveis.$corDeFundoDoButao;
+                height: 50px;
+                width: 120%;
+                border-radius: 9px;
+                cursor: pointer;
+
+                @media (max-width: 768px) {
+                    margin-bottom: 10px;
+                    
+                }
+
+                &--is-active{
+                    width: 110%;
+                    z-index: 10;
+                    background-color: lighten(variaveis.$corDeFundoDoButao, 10%);
+                }
+
+            }
+        }
+    }
+
+}

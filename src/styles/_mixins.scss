@@ -1,0 +1,31 @@
+@use 'variaveis';
+
+@mixin text($fontsize: 16px) {
+    font-size: $fontsize;
+    line-height: $fontsize + 10px;
+    color: variaveis.$corTextoPrincipal;
+}
+
+@mixin title ($fontsize:40px){
+    @include text($fontsize);
+    color: variaveis.$corTextoSecundario;
+}
+
+@mixin btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    color: variaveis.$corTextoSecundario;
+    background-color: variaveis.$corDeFundoDoButao;
+    text-transform: uppercase;
+    border-radius: 5px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+@mixin link-none{
+    text-decoration: none;
+}

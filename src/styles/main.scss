@@ -1,0 +1,139 @@
+@use 'variaveis';
+@use 'mixins';
+@use 'hero';
+@use 'about';
+@use 'characters';
+@use 'trailers';
+@use 'footer';
+@use 'header';
+
+@font-face {
+    font-family: 'Good Brush';
+    src: url('fonts/Good Brush.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    list-style: none;
+    background-color: variaveis.$corDeFundo; 
+}
+
+body {
+    font-family: 'Good Brush', sans-serif;
+    align-items: center;
+    justify-content: center;
+    height: 100%; 
+    max-width: 93vw;
+    margin: 0 auto;
+
+    @media (max-width: 768px){
+        max-width: 100% ;
+        display: flex;  
+        flex-direction: column;
+    }
+}
+.text--big{
+    @include mixins.text(18px);
+
+    @media (max-width: 768px) {
+        font-size: 16px;
+    }
+
+    @media(max-width: 500px) {
+        font-size: 14px;
+    }
+}
+
+.text{
+    @include mixins.text;
+
+    @media (max-width: 768px) {
+        font-size: 14px;
+    }
+
+    @media(max-width: 500px) {
+        font-size: 12px;
+    }
+}
+
+.text--small{
+    @include mixins.text(12px);
+
+    @media (max-width: 768px) {
+        font-size: 11px;
+    }
+
+    @media(max-width: 500px) {
+        font-size: 10px;
+    }
+}
+
+.link-text{
+    @extend .text--big;
+    color: variaveis.$corTextoSecundario;
+    text-decoration: underline;
+
+    @media (max-width: 768px) {
+        font-size: 16px;
+    }
+
+    @media(max-width: 500px) {
+        font-size: 14px;
+    }
+}
+
+
+.title--big{
+    @include mixins.title(44px); 
+
+    @media (max-width: 768px) {
+        font-size: 36px;
+    }
+
+    @media(max-width: 500px) {
+        font-size: 32px;
+    }
+}
+
+.title{
+    @include mixins.title; 
+    
+    @media (max-width: 768px) {
+        font-size: 32px;
+    }
+
+    @media(max-width: 500px) {
+        font-size: 28px;
+    }
+}
+
+.title--small{
+    @include mixins.title(28px);
+    
+    @media (max-width: 768px) {
+        font-size: 24px;
+    }
+
+    @media(max-width: 500px) {
+        font-size: 20px;
+    }
+}
+
+.button{
+    @include mixins.btn;
+    text-decoration: none;
+    padding: 8px 14px;
+
+    &:hover{
+        transform: scale(1.05);;
+        background-color: lighten(variaveis.$corDeFundoDoButao, 10%)
+    }
+
+    li{
+        text-decoration: none;
+    }
+}

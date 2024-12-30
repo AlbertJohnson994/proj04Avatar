@@ -1,0 +1,112 @@
+@use 'variaveis';
+
+.characters{
+    margin-top: 3.6vh;
+    margin-bottom: 3vw;
+
+    @media (max-width: 768px) {
+        display: block; 
+    }
+    
+    &__content{
+        text-align: center;
+        justify-content: center;
+
+        @media (max-width:768px) {
+            height: 130vh;
+        }
+
+        @media (max-width:500px) {
+            margin-bottom: -300px;
+            
+        }
+
+        h2{
+            padding-bottom: 48px;
+            display: block;
+        }
+
+        &__list{
+            display: flex;
+            max-width: 80vw;
+            margin: 0 auto;
+            justify-content: space-between;
+            position: relative;
+
+            @media (max-width:768px) {
+                max-width: 90%;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+
+
+            &__each{
+
+                @media (max-width:768px) {
+                    padding-bottom: 16px;
+                }
+
+                img{
+                    max-width: calc(18vw);
+                    margin-left: 15px ;
+                    cursor: pointer;
+                    transition: transform 0.5s, opacity 0.5s;
+                    border-radius: 4px;
+
+                    @media (max-width: 768px) {
+                        max-width: calc(50% - 8px) ;
+                        
+                    }
+
+                    @media (max-width: 425px) {
+                        max-width: calc(50% - 4px);
+                    }
+                }
+
+                p{
+                    text-align: justify;
+                    display: none;
+                    transition: opacity 0.5s;
+                }
+
+                &--is-active{
+                    position: relative;
+                    z-index: 10;
+                    opacity: 1;
+
+                    img{
+                        transform: scale(1.2)
+                    }
+
+                    p{
+                        display: block;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 100%; /* Ajuste conforme necessário */
+                        background: rgba(255, 255, 255, 0.9);
+                        padding: 20px;
+                        border-radius: 10px;
+                        font-size: 1rem;
+                        color: #333;
+                        opacity: 1;
+
+                        @media (max-width: 500px) {
+                            font-size: .8rem;
+                            width:130%;
+                            position: fixed;
+                            width: 70%;
+                        }
+                    }
+                }
+
+                &--is-inactive{
+                    opacity: 0.5;
+                    z-index: 5;
+                }
+
+            }
+        }
+    }
+}

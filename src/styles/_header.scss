@@ -1,0 +1,73 @@
+@use 'mixins';
+@use 'variaveis';
+
+.header{
+    position: sticky;
+    top:0;
+    left:0;
+    z-index: 1000;
+    margin-top: 18px;
+    display: none;
+    transition: all 0.3s ease;
+    
+    &__content{
+        padding: 8px 36px 0;
+        display: flex;
+        justify-content: space-between;
+        background-color: variaveis.$corDeFundo;
+        margin-bottom: 12px;
+    }
+    
+    &__logo{
+        max-width: 96px;
+        width: 100%;
+        background-color: transparent;
+        height: auto;
+
+        @media (max-width:500px){
+            max-width: 64px;
+        }
+    }
+    
+    &__links{
+        display: flex;
+        background-color: transparent;
+        
+        .button{
+            @include mixins.btn;
+            width: 145px;
+            
+            @media (max-width:500px){
+                width: 100px;
+                font-size: .8rem;
+            }
+
+            @media (max-width: 375px) {
+                width: 60px;
+                font-size: .5rem;
+                height: 2rem;
+                
+            }
+        }
+        
+        &__item{
+            margin-left: 16px ;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            background-color: transparent;
+
+            @media (max-width:500px) {
+                width: 100px;
+            }
+
+            @media (max-width: 375px) {
+                width: 60px
+            }
+        }
+    }
+
+    &--is-visible{
+        display: block;
+    }
+}

@@ -1,0 +1,126 @@
+@use 'variaveis';
+@use 'mixins';
+
+.hero{
+    padding-top: 5.6vh;
+    min-height: 90vh;
+    text-align: center;
+    background-image: url(../images/logo.jpg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 64px;
+
+    @media (max-width:500px) {
+        margin-top: -100px;
+        
+    }
+
+    &::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 1%; /* Largura do efeito de desfoque */
+        height: 100%;
+        background-image: inherit; /* Usa a mesma imagem do fundo */
+        background-size: cover;
+        background-position: right center; /* Alinha a imagem corretamente */
+        filter: blur(10px); /* Aplica o desfoque */
+        z-index: 1; /* Certifica-se de que está acima da imagem original */
+        pointer-events: none; /* Impede interação com o pseudo-elemento */
+    }
+
+    @media (max-width: 768px) {
+        padding-top: 0;
+        background-image: url(../../src/images/logo_lo.png);
+        height: 200%;
+    }
+
+    @media (max-width:500px) {
+        padding-top: 45%;
+        background-image: url(../../src/images/logo_lo.png);
+
+    }
+
+
+    &__content{
+        max-width: 640px;
+        background-color: transparent;
+
+        @media (max-width:768px) {
+            display: flex; /* Usando flexbox para o layout */
+            flex-direction: column; /* Organiza os itens em coluna */
+            align-items: center; /* Centraliza os itens horizontalmente */
+            justify-content: center; /* Centraliza os itens verticalmente */
+            position: absolute;
+            margin: 30% 10%;
+            padding: 0 20px; /* Adiciona algum espaçamento lateral */
+        }
+
+        
+        
+        @media (max-width:400px){
+            margin: 40% auto;
+        }
+        
+        .image{
+            margin-top: -20%;
+            margin-bottom: -50px;
+            background-color: transparent;
+
+            @media (max-width:768px) {
+                background-color: transparent;;
+                
+            }
+        }
+
+        h3{
+            margin-bottom: 24px;
+            background-color: transparent;
+        }
+        
+        img{
+            max-width: 50%;
+            background-color: variaveis.$corDeFundo;
+        }
+
+        p{
+            background-color: transparent;
+        }
+
+        p:last-child{
+            margin-bottom: 20px;
+        }
+
+        &__list{
+        display: flex;
+        justify-content: space-around;
+        margin: 0 auto;
+        width: 100%;
+        background-color: transparent;
+
+        @media(max-width: 768px) {
+            display: flex; 
+            width: 100%;
+        }
+
+        @media (max-width:500px){}
+
+            &__item{
+                width: calc(50% - 48px);
+
+                @media (max-width:500px){
+                    width: calc(50% - 12px);
+                    font-size: .8rem;
+                }
+
+            }
+        }
+    }
+    
+    &__background{
+        background-image: url('../images/logo.jpg')
+    }
+
+}
